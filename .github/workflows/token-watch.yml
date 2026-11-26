@@ -1,0 +1,45 @@
+name: Veille jeton Rockstar / Take-Two
+
+# Une vérification courte (moins d'une minute) toutes les heures.
+# Pas de boucle continue : on garde l'usage de GitHub Actions léger.
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "vide = une vérification, probe = afficher les sources, test = alerte d'essai"
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: token-watch
+  cancel-in-progress: false
+
+jobs:
+  veille:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          MODE: ${{ inputs.mode }}
+        run: |
+          case "$MODE" in
+            "") python token_watch.py ;;
+            probe|test) python token_watch.py "$MODE" ;;
+            *) echo "mode inconnu : $MODE"; exit 1 ;;
+          esac
+      - if: ${{ always() && inputs.mode != 'probe' && inputs.mode != 'test' }}
+        run: |
+          git config user.name "signaux-bot"
+          git config user.email "signaux-bot@users.noreply.github.com"
+          git add state/token_watch.json 2>/dev/null || true
+          git diff --cached --quiet || (git commit -m "Veille jeton : mise à jour" && git pull --rebase -q && git push)
