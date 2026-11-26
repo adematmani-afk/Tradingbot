@@ -1,22 +1,22 @@
 {
- "equity": 94.3163,
- "day": "2026-11-24",
+ "equity": 95.1181,
+ "day": "2026-11-26",
  "day_state": {
   "BTCC-B.TO": {
    "position": null,
    "entries": 0,
    "orb_used": false,
-   "prev_close_below_vwap": true
+   "prev_close_below_vwap": false
   },
   "BTCX-B.TO": {
    "position": null,
-   "entries": 0,
+   "entries": 1,
    "orb_used": false,
-   "prev_close_below_vwap": true
+   "prev_close_below_vwap": false
   },
   "FBTC.TO": {
    "position": null,
-   "entries": 1,
+   "entries": 0,
    "orb_used": false,
    "prev_close_below_vwap": true
   },
@@ -24,7 +24,7 @@
    "position": null,
    "entries": 0,
    "orb_used": false,
-   "prev_close_below_vwap": false
+   "prev_close_below_vwap": true
   },
   "TSLA.NE": {
    "position": null,
@@ -42,13 +42,13 @@
    "position": null,
    "entries": 0,
    "orb_used": false,
-   "prev_close_below_vwap": true
+   "prev_close_below_vwap": false
   },
   "NVDA.NE": {
    "position": null,
-   "entries": 1,
+   "entries": 0,
    "orb_used": false,
-   "prev_close_below_vwap": false
+   "prev_close_below_vwap": true
   },
   "AAPL.NE": {
    "position": null,
@@ -60,34 +60,33 @@
    "position": null,
    "entries": 0,
    "orb_used": false,
-   "prev_close_below_vwap": false
+   "prev_close_below_vwap": true
   },
   "META.NE": {
    "position": null,
    "entries": 0,
    "orb_used": false,
-   "prev_close_below_vwap": true
+   "prev_close_below_vwap": false
   },
   "AVGO.NE": {
    "position": null,
    "entries": 0,
    "orb_used": false,
-   "prev_close_below_vwap": true
+   "prev_close_below_vwap": false
   }
  },
  "last_bar": {
-  "BTCC-B.TO": "2026-11-24T15:55:00-05:00",
-  "BTCX-B.TO": "2026-11-24T15:51:46-05:00",
-  "FBTC.TO": "2026-11-24T15:55:00-05:00",
-  "ENB.TO": "2026-11-24T15:55:00-05:00",
-  "TSLA.NE": "2026-11-24T15:54:29-05:00",
-  "MSFT.NE": "2026-11-24T15:55:00-05:00",
-  "AMZN.NE": "2026-11-24T15:55:00-05:00",
-  "NVDA.NE": "2026-11-24T15:55:00-05:00",
-  "GOOG.NE": "2026-11-24T15:53:32-05:00",
-  "AVGO.NE": "2026-11-24T15:55:00-05:00",
-  "AAPL.NE": "2026-11-24T15:55:00-05:00",
-  "META.NE": "2026-11-24T15:55:00-05:00"
+  "BTCC-B.TO": "2026-11-26T14:14:48-05:00",
+  "BTCX-B.TO": "2026-11-26T14:04:20-05:00",
+  "ENB.TO": "2026-11-26T14:15:00-05:00",
+  "FBTC.TO": "2026-11-26T14:15:35-05:00",
+  "NVDA.NE": "2026-11-26T14:17:14-05:00",
+  "AVGO.NE": "2026-11-26T12:20:39-05:00",
+  "GOOG.NE": "2026-11-26T13:00:58-05:00",
+  "AAPL.NE": "2026-11-26T12:01:01-05:00",
+  "MSFT.NE": "2026-11-26T13:29:47-05:00",
+  "AMZN.NE": "2026-11-26T12:28:00-05:00",
+  "META.NE": "2026-11-26T12:26:06-05:00"
  },
  "journal": [
   {
@@ -338,6 +337,16 @@
    "exit": 34.13,
    "reason": "t2",
    "ret_pct": 1.076,
+   "alert_sent": true
+  },
+  {
+   "date": "2026-11-26",
+   "ticker": "BTCX-B.TO",
+   "setup": "Retour vers le VWAP",
+   "entry": 12.380000114440918,
+   "exit": 12.51,
+   "reason": "t2",
+   "ret_pct": 0.85,
    "alert_sent": true
   }
  ],
